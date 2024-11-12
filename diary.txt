@@ -1,0 +1,6 @@
+12.11.2024
+ - feat: layout gimbal driver
+
+
+11.11.2024
+ - kick-off PROJECT PCB OVEN
