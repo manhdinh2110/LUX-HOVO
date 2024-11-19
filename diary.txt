@@ -1,5 +1,6 @@
 19.11.2024
  - feat: first move with screen ==>  trynna draw the logo 
+ - page clock done!!
 
 12.11.2024
  - feat: layout gimbal driver
