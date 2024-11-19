@@ -227,7 +227,7 @@
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/extra/widgets/imgbtn/../../../lvgl.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/extra/widgets/span/lv_span.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/extra/widgets/span/../../../lvgl.h \
- include/ui.h include/screens.h \
+ src/ui.h src/screens.h src/screens.h src/images.h \
  .pio/libdeps/esp32-s3-devkitm-1/GFX\ Library\ for\ Arduino/src/Arduino_GFX_Library.h \
  .pio/libdeps/esp32-s3-devkitm-1/GFX\ Library\ for\ Arduino/src/Arduino_DataBus.h \
  C:/Users/mediv/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \

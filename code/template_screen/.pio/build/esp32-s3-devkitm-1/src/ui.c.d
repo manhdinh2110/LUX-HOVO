@@ -1,4 +1,4 @@
-.pio/build/esp32-s3-devkitm-1/src/ui.c.o: src/ui.c include/ui.h \
+.pio/build/esp32-s3-devkitm-1/src/ui.c.o: src/ui.c src/ui.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/lvgl.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/misc/lv_log.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/misc/../lv_conf_internal.h \
@@ -227,5 +227,4 @@
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/extra/widgets/imgbtn/../../../lvgl.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/extra/widgets/span/lv_span.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/extra/widgets/span/../../../lvgl.h \
- include/screens.h include/screens.h include/images.h include/actions.h \
- include/vars.h
+ src/screens.h src/images.h src/actions.h src/vars.h

@@ -1,5 +1,5 @@
-.pio/build/esp32-s3-devkitm-1/src/styles.c.o: src/styles.c \
- include/styles.h .pio/libdeps/esp32-s3-devkitm-1/lvgl/lvgl.h \
+.pio/build/esp32-s3-devkitm-1/src/styles.c.o: src/styles.c src/styles.h \
+ .pio/libdeps/esp32-s3-devkitm-1/lvgl/lvgl.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/misc/lv_log.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/misc/../lv_conf_internal.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/misc/../lv_conf_kconfig.h \
@@ -227,4 +227,4 @@
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/extra/widgets/imgbtn/../../../lvgl.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/extra/widgets/span/lv_span.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/extra/widgets/span/../../../lvgl.h \
- include/images.h include/fonts.h
+ src/images.h src/fonts.h

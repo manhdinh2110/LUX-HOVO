@@ -21,6 +21,8 @@
  ******************************************************************************/
 #include <lvgl.h>
 #include <ui.h>
+#include <screens.h>
+#include <images.h>
 /*******************************************************************************
  * Start of Arduino_GFX setting
  *
@@ -69,6 +71,41 @@ static uint32_t screenHeight;
 static lv_disp_draw_buf_t draw_buf;
 static lv_color_t *disp_draw_buf;
 static lv_disp_drv_t disp_drv;
+// uint8_t hour = 0;
+// uint8_t minute = 0;
+// uint8_t second = 0;
+// unsigned long previousMillis = 0;
+// const long interval = 1000;  // 1 second interval
+
+/*CLOCKING*/
+void display_time(uint8_t hour, uint8_t min, uint8_t sec)
+{
+   //  struct tm timeinfo;
+
+   //  if (!getLocalTime(&timeinfo))
+   //  {
+   //      USBSerial.println("Failed to obtain time");
+   //      return;
+   //  }
+   //  else
+   //  {
+      //   int year = timeinfo.tm_year + 1900;
+      //   int month = timeinfo.tm_mon + 1;
+      //   int day = timeinfo.tm_mday;
+      //   int hour = timeinfo.tm_hour;
+      //   int min = timeinfo.tm_min;
+      //   int sec = timeinfo.tm_sec;
+
+      int sec_angle = 3600 * sec / 60;
+        int min_angle = 3600 * min / 60 + 60 * sec / 60;
+        int hour_angle = 3600 * (hour % 12) / 12 + 300 * min / 60;
+
+        lv_img_set_angle(objects.clock_hour, hour_angle);
+        lv_img_set_angle(objects.clock_min, min_angle);
+        lv_img_set_angle(objects.clock_sec, sec_angle);
+   // }
+   loadScreen(SCREEN_ID_PAGE_CLOCK);
+}
 
 /* Display flushing */
 void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p)
@@ -87,16 +124,12 @@ void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color
 
 void setup()
 {
-   Serial.begin(115200);
-   // while (!Serial);
-   Serial.println("LVGL Hello World");
-
    // Init Display
    gfx->begin();
-   gfx->fillScreen(BLACK);
+   // gfx->fillScreen(BLACK);
      
-    pinMode(TFT_BL, OUTPUT);
-    digitalWrite(TFT_BL, HIGH);
+   pinMode(TFT_BL, OUTPUT);
+   digitalWrite(TFT_BL, HIGH);
 
    lv_init();
 
@@ -130,24 +163,42 @@ void setup()
       indev_drv.type = LV_INDEV_TYPE_POINTER;
       lv_indev_drv_register(&indev_drv);
 
-      /* Create simple label */
-    
-      lv_obj_t *label1 = lv_label_create(lv_scr_act());
-      lv_label_set_text(label1, "Desde Iztapalapa Para el Mundo");
-      lv_obj_align(label1, LV_ALIGN_CENTER, -0,-40);
-
-      lv_obj_t *label = lv_label_create(lv_scr_act());
-      lv_label_set_text(label, "Sin Miedo al Exito Papi");
-      lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
-      
+      // /* Create simple label */
       ui_init();
-
-      Serial.println("Setup done");
    }
 }
 
 void loop()
 {
    lv_timer_handler(); /* let the GUI do its work */
-   delay(5000);
+   // ui_tick();
+   tick_screen_page_clock();
+
+//    unsigned long currentMillis = millis();
+  
+//   // Check if it's time to update the clock (every second)
+//   if (currentMillis - previousMillis >= interval) {
+//    previousMillis = currentMillis;  // Save the last time update
+   
+//    second++;  // Increment second
+   
+//    if (second >= 60) {
+//       second = 0;
+//       minute++;  // Increment minute if seconds roll over
+      
+//       if (minute >= 60) {
+//          minute = 0;
+//          hour++;  // Increment hour if minutes roll over
+         
+//          if (hour >= 24) {
+//             hour = 0;  // Reset to 0 when hour reaches 24
+//          }
+//       }
+//    }
+   
+//    // Call your function to display the updated time
+//    display_time(hour, minute, second);
+//   }
+  delay(5);
 }
+

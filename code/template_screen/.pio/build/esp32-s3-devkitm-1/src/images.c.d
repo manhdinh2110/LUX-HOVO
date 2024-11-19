@@ -1,5 +1,5 @@
-.pio/build/esp32-s3-devkitm-1/src/images.c.o: src/images.c \
- include/images.h .pio/libdeps/esp32-s3-devkitm-1/lvgl/lvgl.h \
+.pio/build/esp32-s3-devkitm-1/src/images.c.o: src/images.c src/images.h \
+ .pio/libdeps/esp32-s3-devkitm-1/lvgl/lvgl.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/misc/lv_log.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/misc/../lv_conf_internal.h \
  .pio/libdeps/esp32-s3-devkitm-1/lvgl/src/misc/../lv_conf_kconfig.h \
